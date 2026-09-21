@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>魔兽世界7.0 - 军团再临版本全面攻略与资料库</title>
+    <meta name="description" content="魔兽世界7.0军团再临版本官方资料库，包含德拉诺之王资料片背景故事、职业大厅系统详解、飞行解锁时间表、神器系统与最新副本攻略。">
+    <meta name="keywords" content="魔兽世界7.0, 军团再临, 德拉诺之王, 魔兽攻略, 职业大厅, 神器系统">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-bg: #050505;
+            --secondary-bg: #1a1a1a;
+            --accent-gold: #c69c6d;
+            --accent-red: #8a2be2;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border-color: #333;
+            --card-hover: #2a2a2a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "Heiti SC", sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(5, 5, 5, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+            font-size: 16px;
+            font-weight: normal;
+            opacity: 0.8;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 15px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-gold);
+        }
+
+        .header-actions button {
+            background: transparent;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 8px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .header-actions button:hover {
+            background: var(--accent-gold);
+            color: #000;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(to bottom, rgba(5,5,5,0.3), var(--primary-bg)), url('https://picsum.photos/seed/warcraft7/1920/1080') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 40px;
+            border: 1px solid rgba(198, 156, 109, 0.3);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+            text-shadow: 0 0 20px rgba(198, 156, 109, 0.5);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-main);
+            margin-bottom: 30px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat-item h3 {
+            font-size: 24px;
+            color: var(--accent-red);
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            margin: 0;
+            color: var(--text-muted);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 5px;
+            height: 28px;
+            background: var(--accent-gold);
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 8px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Content Layout: Sidebar + List */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 40px;
+        }
+
+        .guide-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .guide-item {
+            display: flex;
+            background: var(--secondary-bg);
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-img {
+            width: 200px;
+            height: 140px;
+            object-fit: cover;
+        }
+
+        .guide-info {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .guide-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            background: rgba(138, 43, 226, 0.2);
+            color: var(--accent-red);
+            font-size: 12px;
+            border-radius: 2px;
+            margin-bottom: 10px;
+        }
+
+        .guide-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .guide-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        aside {
+            position: sticky;
+            top: 90px;
+            height: fit-content;
+        }
+
+        .sidebar-widget {
+            background: var(--secondary-bg);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .sidebar-widget h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .sidebar-list li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar-list a {
+            font-size: 14px;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sidebar-list a:hover {
+            color: var(--accent-gold);
+        }
+
+        .sidebar-list span {
+            font-size: 12px;
+            background: #333;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: var(--secondary-bg);
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            padding: 60px 0 20px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent-gold);
+        }
+
+        .copyright {
+            text-align: center;
+            color: #555;
+            font-size: 13px;
+            padding-top: 20px;
+            border-top: 1px solid #111;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+            aside {
+                position: static;
+                order: -1;
+            }
+            .guide-item {
+                flex-direction: column;
+            }
+            .guide-img {
+                width: 100%;
+                height: 180px;
+            }
+            nav {
+                display: none;
+            }
+            .header-actions {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <div>⚔️</div>
+                <div>
+                    WarCraft<span>7.0</span>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">职业大厅</a></li>
+                    <li><a href="#">神器系统</a></li>
+                    <li><a href="#">副本攻略</a></li>
+                    <li><a href="#">飞行解锁</a></li>
+                    <li><a href="#">成就指南</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button>登录战网</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>军团再临：艾泽拉斯的决战</h1>
+                <p>开启全新的冒险，前往破碎的德拉诺，与阿古斯神域的恶魔军团展开殊死搏斗。收集神器，解锁飞行，书写属于你的传奇。</p>
+                <a href="#" style="background: var(--accent-gold); color: #000; padding: 12px 30px; border-radius: 4px; font-weight: bold; display: inline-block;">阅读版本更新指南</a>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>7.0</h3>
+                        <p>版本号</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>120</h3>
+                        <p>新等级上限</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>11</h3>
+                        <p>全新职业大厅</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Features -->
+        <section class="container">
+            <h2 class="section-title">军团再临核心特性</h2>
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">🏰</div>
+                    <h3>职业大厅</h3>
+                    <p>每个职业都拥有专属的独立基地。在职业大厅中，你可以招募英雄、收集神器碎片、参与史诗任务线，与你的英雄建立深厚羁绊。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">⚔️</div>
+                    <h3>神器系统</h3>
+                    <p>获得并强化你专属的神器武器。神器拥有独特的技能和外观，随着使用会解锁新的外观和特殊效果，是7.0版本最重要的装备系统。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🦅</div>
+                    <h3>飞行解锁</h3>
+                    <p>通过在职业大厅完成“破碎的德拉诺”战役，收集神器碎片，最终在艾泽拉斯大陆解锁飞行功能，探索更广阔的地图。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">👑</div>
+                    <h3>套装外观</h3>
+                    <p>通过特定的任务线或活动，可以获取属于你职业的独特套装外观，让你的角色在战场上独树一帜。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Content Area -->
+        <section class="container" style="background: #080808; padding: 40px; border-radius: 8px; border: 1px solid var(--border-color);">
+            <div class="content-layout">
+                <div class="guide-list">
+                    <h2 class="section-title" style="margin-bottom: 20px;">最新攻略与资讯</h2>
+                    
+                    <a href="#" class="guide-item">
+                        <img src="https://picsum.photos/seed/draenor/400/300" alt="破碎的德拉诺" class="guide-img">
+                        <div class="guide-info">
+                            <span class="guide-tag">资料片</span>
+                            <h3 class="guide-title">重返德拉诺：开启新冒险的完整流程</h3>
+                            <p class="guide-desc">详细介绍如何开启军团再临资料片，前往破碎的德拉诺，完成前置任务线，并解锁职业大厅。</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="guide-item">
+                        <img src="https://picsum.photos/seed/paladin/400/300" alt="圣骑士神器" class="guide-img">
+                        <div class="guide-info">
+                            <span class="guide-tag">职业</span>
+                            <h3 class="guide-title">圣骑士神器序列：神圣与防护专精加点</h3>
+                            <p class="guide-desc">针对7.0版本的圣骑士神器天赋树解析，提供PVE和PVP环境下的最优序列推荐。</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="guide-item">
+                        <img src="https://picsum.photos/seed/demon/400/300" alt="阿古斯" class="guide-img">
+                        <div class="guide-info">
+                            <span class="guide-tag">副本</span>
+                            <h3 class="guide-title">阿古斯之拥：最终BOSS机制详解与团队配置</h3>
+                            <p class="guide-desc">军团再临版本的最终副本攻略，包含阿古斯各个区域的机制解析及通关技巧。</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="guide-item">
+                        <img src="https://picsum.photos/seed/flight/400/300" alt="飞行解锁" class="guide-img">
+                        <div class="guide-info">
+                            <span class="guide-tag">实用</span>
+                            <h3 class="guide-title">飞行解锁时间表：碎片收集全攻略</h3>
+                            <p class="guide-desc">列出所有职业神器碎片的具体掉落位置和所需时间，帮助玩家高效解锁飞行。</p>
+                        </div>
+                    </a>
+                </div>
+
+                <aside>
+                    <div class="sidebar-widget">
+                        <h4>版本导航</h4>
+                        <ul class="sidebar-list">
+                            <li><a href="#">职业大厅任务线 <span>全职业</span></a></li>
+                            <li><a href="#">神器外观收集 <span>2023</span></a></li>
+                            <li><a href="#">阿古斯战场 <span>副本</span></a></li>
+                            <li><a href="#">套装外观 <span>时装</span></a></li>
+                            <li><a href="#">宠物对战 <span>攻略</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h4>热门推荐</h4>
+                        <ul class="sidebar-list">
+                            <li><a href="#">7.0怀旧服开启时间</a></li>
+                            <li><a href="#">职业平衡调整一览</a></li>
+                            <li><a href="#">赛季通行证奖励</a></li>
+                            <li><a href="#">地下城英雄榜</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="container">
+            <h2 class="section-title">常见问题解答</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">Q: 如何开启军团再临版本的主线剧情？</div>
+                    <div class="faq-answer">A: 玩家需要达到95级，并完成“破碎的前奏”系列任务。完成这些任务后，将自动开启前往破碎的德拉诺的任务线，进而开启职业大厅剧情。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: 7.0版本飞行功能如何解锁？</div>
+                    <div class="faq-answer">A: 解锁飞行需要完成职业大厅战役，收集所有神器碎片（共11个），并在艾泽拉斯大陆完成“重返破碎的德拉诺”成就。最后一步通常涉及在阿古斯神域完成一系列挑战。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: 神器武器可以交易吗？</div>
+                    <div class="faq-answer">A: 不可以。神器武器是绑定的，且一旦开始强化，强化等级会永久保留，无法转移给其他角色。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: 7.0版本还有新的种族吗？</div>
+                    <div class="faq-answer">A: 是的，7.0版本新增了夜之子（暗夜精灵的变种）和狼人（被遗忘者的变种）作为可选种族，但需要满足特定条件才能在角色创建时选择。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于版本</h4>
+                    <ul>
+                        <li><a href="#">版本更新日志</a></li>
+                        <li><a href="#">PTR测试服</a></li>
+                        <li><a href="#">补丁说明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>游戏指南</h4>
+                    <ul>
+                        <li><a href="#">职业数据库</a></li>
+                        <li><a href="#">副本数据库</a></li>
+                        <li><a href="#">物品数据库</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>社区互动</h4>
+                    <ul>
+                        <li><a href="#">玩家论坛</a></li>
+                        <li><a href="#">攻略投稿</a></li>
+                        <li><a href="#">公会列表</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">关于本站</a></li>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2016-2023 魔兽世界7.0资料库. All rights reserved. 本站为玩家自发建设的攻略站，与暴雪娱乐无官方关联。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
